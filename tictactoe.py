@@ -117,8 +117,15 @@ class TicTacToe:
         """
         return not self.any_moves_left(board)
 
-# if __name__ == '__main__':
-#     board = TicTacToe.generate_board()
-#     print(f'the winner ')
+if __name__ == '__main__':
+    game = TicTacToe()
+    board_winner = [
+        ['X', 'X', 'X', 'X'],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ']
+    ]
+    print(f'the winner is {game.check_winner(board_winner)}!')
+
 
 
