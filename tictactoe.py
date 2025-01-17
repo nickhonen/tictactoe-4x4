@@ -126,6 +126,3 @@ if __name__ == '__main__':
         [' ', ' ', ' ', ' ']
     ]
     print(f'the winner is {game.check_winner(board_winner)}!')
-
-
-
