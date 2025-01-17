@@ -17,7 +17,7 @@ pytest # run in project root
 
 ### Optimizations/Notes/Edge Cases:
 
-- Board doesn't handle invalid pieces (non x or O, non strings), should've clarified if I needed to. Also doesn't handle different board sizes.
+- Board doesn't handle invalid pieces (non x or O, non strings), I should've clarified if I needed to. Also doesn't handle different board sizes. Code is designed so I could easily add this at any point though.
 - I use a few any() expressions and other tradeoffs that would be slower if the board had n rows/columns, but because I knew it only had 4 I chose readability/more concise solutions instead.
 - could've done check_box with the directions too, but I know it's a 4x4 game and I didn't want to overcomplicate
 - Probably made too many comments, some of the code is self documenting.
