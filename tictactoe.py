@@ -11,7 +11,7 @@ class TicTacToe:
     def generate_board():
         """
         Generates empty 4x4 matrix representing board.
-        All spaces = 
+        Empty spaces = ' ' (string with space)
 
         """
         rows, cols = 4, 4
@@ -25,7 +25,7 @@ class TicTacToe:
         2x2 box, or corners
         
         Uses direction vectors to find pattern from
-        each
+        each.
 
         Returns str winning piece or None if no winner
 
@@ -37,7 +37,7 @@ class TicTacToe:
             (-1, 1), # diag l
         ]
         
-        # corners
+        # checking corners manually
         top_left = board[0][0]
         if top_left == board[0][3] == board[3][0] == board[3][3]:
             return top_left
@@ -48,7 +48,8 @@ class TicTacToe:
                 if piece == ' ':    
                     continue
                 
-                # get delta x and y for each vector, check position
+                # get each x and y value of directions, use when there is a piece
+                # to find a horiz, diag, or vert line.
                 for dx, dy in directions:
                     if self.check_line(board, row_idx, col_idx, dx, dy, piece):
                         return piece
@@ -66,18 +67,18 @@ class TicTacToe:
         """
         Helper function, checks next 3 pieces
         in the direction of dx, dy for horiz,
-        vert, diag
+        vert, diag. 
 
         Returns bool True if line, False if not
         """
 
-        # 
+        # Avoids index out of bounds for certain values
         if not (0 <= row + (dx * 3) < 4 and
                 0 <= col + (dy * 3) < 4):
             return False
 
         for i in range(1, 4):
-            # Gets the next 3 positions of line
+            # Gets the next 3 positions of line according to dx, dy
             next_x, next_y = row + (dx * i), col + (dy * i) 
             
             if board[next_x][next_y] != piece:
