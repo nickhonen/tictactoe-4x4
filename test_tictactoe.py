@@ -65,7 +65,7 @@ def test_corners_win(game):
     ]
     assert game.check_winner(board) == 'O'
 
-def test_no_winner(game):
+def test_full_board_no_winner(game):
     board = [
         ['X', 'O', 'X', 'O'],
         ['O', 'X', 'O', 'X'],
@@ -94,6 +94,7 @@ def test_any_moves_left(game):
         ['X', 'O', 'X', 'O'],
         ['X', 'X', 'O', 'X']
     ]
+    
     assert game.any_moves_left(board_yes) == True
     assert game.any_moves_left(board_no) == False
     assert game.any_moves_left(board_no_two) == False
@@ -118,6 +119,7 @@ def test_is_game_over(game):
         ['X', 'O', 'X', 'O'],
         ['X', 'X', 'O', 'X']
     ]
+
     assert game.is_game_over(board_yes) == False
     assert game.is_game_over(board_no) == True
     assert game.is_game_over(board_no_two) == True
