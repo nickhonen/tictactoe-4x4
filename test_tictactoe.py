@@ -22,10 +22,10 @@ def test_horizontal_win(game):
 
 def test_vertical_win(game):
     board = [
-        ['O', ' ', 'X', ' '],
-        ['O', ' ', ' ', ' '],
-        ['O', ' ', ' ', ' '],
-        ['O', ' ', ' ', ' ']
+        ['O', 'X', 'X', ' '],
+        ['O', 'X', ' ', ' '],
+        ['O', 'X', ' ', ' '],
+        ['O', 'X', ' ', ' ']
     ]
     assert game.check_winner(board) == 'O'
 
